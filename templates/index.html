@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLO Video Detection</title>
+</head>
+<body>
+    <h1>YOLO Detection of Videos</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="video" accept="video/*" required>
+        <input type="submit" value="Upload Video">
+    </form>
+
+    {% if original_video and processed_video %}
+    <h2>Original Video</h2>
+    <video width="640" height="480" controls>
+        <source src="{{ original_video }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h2>Processed Video</h2>
+    <video width="640" height="480" controls>
+        <source src="{{ processed_video }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    {% endif %}
+</body>
+</html>
