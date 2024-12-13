@@ -77,4 +77,6 @@ def upload():
 
     return render_template('index.html', original_video=input_video_path, processed_video=output_video_path)
 
-if __name__
+if __name__ == '__main__':
+    app.run(debug=True)
+
